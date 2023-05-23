@@ -1,13 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import axios from "axios";
 
 function App() {
+  axios
+    .get("http://universities.hipolabs.com/search?country=Indonesia")
+    .then((respones) => {
+      console.log(respones.data[16]);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <code>HELLO WE'RE GROUP 3</code>
         </p>
         <a
           className="App-link"
